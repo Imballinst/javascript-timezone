@@ -1,0 +1,10 @@
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web);
+
+body {
+  background-image: url("../img/bg.jpg");
+}
+
+.font-titillium {
+  font-family: 'Titillium Web', sans-serif;
+  color: #FFF;
+}

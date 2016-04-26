@@ -1,1 +1,23 @@
-Hey Guys
+<!DOCTYPE HTML>
+<html>
+<head>
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css"/>
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+
+  <!-- Title -->
+  <title>
+    JavaScript Timezone
+  </title>
+</head>
+<body>
+  <div id="newtime" class="font-titillium text-center"></div>
+
+  <script>
+    setInterval(function() {
+      document.getElementById("newtime").innerHTML = new Date();
+    }, 1000);
+  </script>
+</body>
+</html>
