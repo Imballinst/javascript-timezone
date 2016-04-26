@@ -12,12 +12,15 @@
   </title>
 </head>
 <body>
-  <div id="newtime" class="font-titillium text-center"></div>
+  <div class="container">
+    <div id="newtime" class="font-titillium text-center"></div>
 
-  <script>
-    setInterval(function() {
-      document.getElementById("newtime").innerHTML = new Date();
-    }, 1000);
-  </script>
+    <h2 class="font-titillium">Wheel Delta value: <span id="wheelvalue"></span></h2>
+  </div>
+  
+  <!-- Functions -->
+  <script type="text/javascript" src="assets/js/functions.js"></script>
+  <!-- Execute -->
+  <script type="text/javascript" src="assets/js/script.js"></script>
 </body>
 </html>
