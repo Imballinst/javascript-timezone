@@ -1,10 +1,70 @@
 @import url(https://fonts.googleapis.com/css?family=Titillium+Web);
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
   background-image: url("../img/bg.jpg");
+  margin-bottom: 70px;
+}
+
+option {
+	font-family: 'Titillium Web', sans-serif;
+	font-size: 12px;
 }
 
 .font-titillium {
   font-family: 'Titillium Web', sans-serif;
   color: #FFF;
+}
+
+#time {
+	font-size: 25px;
+}
+
+/* Header */
+
+.header {
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+  /* Set the fixed height of the header here */
+  height: 120px;
+  background-color: rgba(128,128,128,0.3);
+}
+
+/* Footer */
+
+.footer {
+	padding: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 70px;
+  background-color: rgba(128,128,128,0.3);
+  text-align: center;
+}
+
+a.btn-social.btn-outline {
+	color: #FFF;
+}
+
+/* Hyperlink */
+
+a.link {
+	color: #BBB;
+}
+
+/* Override Bootstrap */
+
+.form-control {
+	font-family: 'Titillium Web', sans-serif;
+	font-size: 12px;
+}
+
+.margin-btm-20 {
+	margin-bottom: 20px;
 }
