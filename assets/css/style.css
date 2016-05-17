@@ -8,6 +8,7 @@ html {
 body {
   background-image: url("../img/bg.jpg");
   margin-bottom: 70px;
+  background-size: cover;
 }
 
 option {
