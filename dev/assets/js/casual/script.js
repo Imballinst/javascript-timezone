@@ -8,6 +8,7 @@ radius = radius * 0.90;
 // First time the page loads
 showTime();
 drawClock();
+preloadImage();
 
 // Consider various browsers
 var timeElement = document.getElementById("tzlist");

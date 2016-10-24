@@ -8,7 +8,6 @@ if (new Date().getTimezoneOffset()/60 == 0) {
 	tzScroll = new Date().getTimezoneOffset()/60 * -1;
 }
 document.getElementById('tzlist').value=tzScroll;
-preloadImage();
 
 function preloadImage() {
 	for (var i=0; i<24; i++) {
@@ -172,6 +171,7 @@ radius = radius * 0.90;
 // First time the page loads
 showTime();
 drawClock();
+preloadImage();
 
 // Consider various browsers
 var timeElement = document.getElementById("tzlist");
