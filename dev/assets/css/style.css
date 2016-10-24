@@ -1,0 +1,53 @@
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web);
+html {
+  position: relative;
+  min-height: 100%; }
+
+body {
+  font-family: 'Titillium Web', sans-serif;
+  margin-bottom: 70px; }
+
+option {
+  font-size: 12px; }
+
+#time {
+  font-size: 25px; }
+
+/* Header */
+.header {
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+  /* Set the fixed height of the header here */
+  height: 120px;
+  background-color: rgba(128, 128, 128, 0.8);
+  color: #FFF; }
+
+/* Footer */
+.footer {
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 70px;
+  background-color: rgba(128, 128, 128, 0.8);
+  text-align: center;
+  color: #FFF; }
+
+a.btn-social.btn-outline {
+  color: #FFF; }
+
+a.link {
+  color: #BBB; }
+
+/* Override Bootstrap */
+.form-control {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 12px; }
+
+.margin-btm-20 {
+  margin-bottom: 20px; }
+
+.panel-opacity {
+  background-color: rgba(255, 255, 255, 0.95); }

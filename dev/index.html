@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1">
+
+  <!-- build:css -->
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css"/>
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+	<!-- endbuild -->
+
+  <!-- Title -->
+  <title>
+    JavaScript Timezone
+  </title>
+</head>
+<body>
+  <div class="header">
+    <h2>Javascript Timezone</h2>
+    <h5>How to use: change the timezone by clicking or scrolling [mouse wheel] on the select option</h5>
+  </div>
+
+  <div class="container">
+    <!-- Time -->
+    <div class="row margin-btm-20">
+	    <div class="col-md-6 col-md-offset-3">
+	    	<div class="panel panel-default panel-opacity">
+				  <div class="panel-body">
+				    <div id="time" class="text-center"></div>
+				  </div>
+				</div>
+	    </div>
+    </div>
+
+    <!-- Clock -->
+    <div class="row margin-btm-20 text-center">
+      <canvas id="canvas" width="300" height="300"></canvas>
+    </div>
+
+    <!-- Select Option -->
+    <div class="row margin-btm-20">
+      <div class="col-md-6 col-md-offset-3">
+        <select id="tzlist" class="form-control margin-btm-20" onchange="selectOption()">
+          <option value="-12">UTC-12: BIT</option>
+          <option value="-11">UTC-11: NUT, SST</option>
+          <option value="-10">UTC-10: CKT, HAST, HST, TAHT</option>
+          <option value="-9">UTC-9: AKST, GAMT, GIT, HADT</option>
+          <option value="-8">UTC-8: AKDT, CIST, PST</option>
+          <option value="-7">UTC-7: MST (Mountain), PDT</option>
+          <option value="-6">UTC-6: CST (Central European), EAST, GALT, MDT</option>
+          <option value="-5">UTC-5: ACT (Acre), CDT (Central European), COT, CST (Cuba), EASST, ECT (Ecuador), EST (Eastern European), PET</option>
+          <option value="-4">UTC-4: AMT (Amazon), AST, BOT, CDT (Cuba), CLT, COST, ECT (Eastern Caribbean), EDT (Eastern European), FKT, GYT, PYT </option>
+          <option value="-3">UTC-3: ADT, AMST, ART, BRT, CLST, FKST (Standard), FKST (Summer), GFT, PMST, PYST, ROTT, SRT, UYT</option>
+          <option value="-2">UTC-2: BRST, FNT, GST (South Georgia), PMDT, UYST</option>
+          <option value="-1">UTC-1: AZOST, CVT, EGT</option>
+          <option value="0">UTC: GMT, IBST, UCT, UTC, WET, Z, EGST</option>
+          <option value="1">UTC+1: BST, CET, DFT, IST, MET, WAT, WEDT, WEST</option>
+          <option value="2">UTC+2: CAT, CEDT (Central European), CEST (Central European), EET, HAEC, IST, MEST, SAST, USZ1, WAST</option>
+          <option value="3">UTC+3: AST, EAT, EEDT, EEST, FET, IDT, IOT, MSK, SYOT</option>
+          <option value="4">UTC+4: AMT (Armenia), AZT, GET, GST (Gulf), MUT, RET, SAMT, SCT, VOLT</option>
+          <option value="5">UTC+5: HMT, MAWT, MVT, ORAT, PKT, TFT, TJT, TMT, UZT, YEKT</option>
+          <option value="6">UTC+6: BDG, BIOT, BST (Bangladesh), BTT, KGT, OMST, VOST</option>
+          <option value="7">UTC+7: DAVT, HOVT, ICT, KRAT, THA, WIB</option>
+          <option value="8">UTC+8: ACT (Asean), AWST, BDT, CHOT, CIT, CST (China), CT, HKT, IRKT, MST (Malaysia), MYT, PST, SGT, ULAT, WITA, WST</option>
+          <option value="9">UTC+9: AWDT, EIT, JST, KST, TLT, WIT, YAKT</option>
+          <option value="10">UTC+10: AEST (Australia), ChST, CHUT, DDUT, EST (Australia), PGT, VLAT</option>
+          <option value="11">UTC+11: AEDT, BST (Bouganville), KOST, LHST, MIST, NCT, PONT, SAKT, SBT, VUT, NFT</option>
+          <option value="12">UTC+12: FJT, GILT, MAGT, MHT, NZST, PETT, TVT, WAKT</option>
+          <option value="13">UTC+13: NZDT, PHOT, TKT, TOT</option>
+          <option value="14">UTC+14: LINT</option>
+        </select>
+
+        <div class="panel panel-default panel-opacity">
+				  <div class="panel-body">
+				    <h5 class=" text-center">
+					    All data were taken from this <a class="link" href="https://en.wikipedia.org/wiki/List_of_time_zone_abbreviations">Wikipedia page</a> (as of April 27, 2016).<br>
+			        Time lapse was taken from <a class="link" href="https://www.youtube.com/watch?v=AncjE1D1aWM">this video</a> which was created by Gerald Donovan.<br>
+			        UTC offset by 30 and 45 minutes are not included.
+        		</h5>
+				  </div>
+				</div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+            <p>Developed by Try Ajitiono, 2016</p>
+            <ul class="list-inline">
+              <li>
+                  <a href="https://www.facebook.com/ajiballinst" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+              </li>
+              <li>
+                  <a href="https://twitter.com/Ajiballinst" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+              </li>
+              <li>
+                  <a href="https://github.com/Imballinst/" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
+              </li>
+              <li>
+                  <a href="https://www.youtube.com/user/ballinstIDGS" class="btn-social btn-outline"><i class="fa fa-youtube icon-margin"></i></a>
+              </li>
+              <li>
+                  <a href="http://www.twitch.tv/imballinst" class="btn-social btn-outline"><i class="fa fa-twitch icon-margin"></i></a>
+              </li>
+              <li>
+                  <a href="https://imballinst.wordpress.com/" class="btn-social btn-outline"><i class="fa fa-wordpress icon-margin"></i></a>
+              </li>
+          </ul>
+        </div>
+    </div>
+    </div>
+  </footer>
+
+  <!-- build:js -->
+	<script type="text/javascript" src="assets/js/plugin.js"></script>
+	<script type="text/javascript" src="assets/js/casual.js"></script>
+	<!-- endbuild -->
+</body>
+</html>
