@@ -32,5 +32,8 @@
     "gulp-sass": "^2.3.2",
     "gulp-uglify": "^1.5.3",
     "run-sequence": "^1.2.1"
+  },
+  "dependencies": {
+    "sprity": "^1.0.8"
   }
 }
