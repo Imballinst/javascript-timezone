@@ -119,7 +119,7 @@ gulp.task('styles', function() {
 });
 
 gulp.task('scripts', function() {
-  return gulp.src(paths.src.js.root)
+  return gulp.src([paths.dev.js.root + 'plugin.js', paths.dev.js.root + 'casual.js'])
     .pipe(concat('main.min.js'))
     .pipe(uglify())
     .pipe(gulp.dest(paths.dst.js));
@@ -129,9 +129,7 @@ gulp.task('scripts', function() {
 
 gulp.task('images', function(){
   return gulp.src(paths.src.img)
-  .pipe(imagemin({
-    verbose: true
-  }))
+  .pipe(imagemin())
   .pipe(gulp.dest(paths.dst.img))
 });
 
@@ -156,7 +154,8 @@ gulp.task('build', function(callback) {
   runSequence('clean:dist', 'sass',
               'casualIndex',
               'concatPlugins',
-    ['styles', 'scripts', 'images', 'fonts'],
+    ['styles', 'scripts', 'images',
+    'fonts'],
     'copyHTML',
     callback
   );

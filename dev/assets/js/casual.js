@@ -1,6 +1,5 @@
 // Initialization; when the page first loads
 var tzScroll;
-var imgArray = loadImages();
 if (new Date().getTimezoneOffset()/60 == 0) {
 	// UTC
 	tzScroll = 0;
@@ -9,17 +8,12 @@ if (new Date().getTimezoneOffset()/60 == 0) {
 	tzScroll = new Date().getTimezoneOffset()/60 * -1;
 }
 document.getElementById('tzlist').value=tzScroll;
+preloadImage();
 
-// Function loadImages: to prevent image blink
-function loadImages() {
-	var image = [];
-
-	for (i = 0; i < 24; i++) {
-		image[i] = new Image();
-		image[i].src = '/assets/img/jam' + i + '.png';
+function preloadImage() {
+	for (var i=0; i<24; i++) {
+		(new Image()).src = './assets/img/jam' + i + '.png';
 	}
-
-	return image;
 }
 
 // Function scrollSelectOption: using added event handler to increase or decrease tzScroll
@@ -66,7 +60,8 @@ function showTime() {
 	var min = (new Date().getMinutes() < 10) ? "0" + new Date().getMinutes() : new Date().getMinutes();
 	var sec = (new Date().getSeconds() < 10) ? "0" + new Date().getSeconds() : new Date().getSeconds();
 	// change background
-	$('body').css('background-image', 'url(' + imgArray[tmphr].src + ')');
+	var imgUrl = './assets/img/jam' + tmphr + '.png';
+	$('body').css('background-image', 'url(' + imgUrl + ')');
 	$('body').css('background-size', 'cover');
 
 	var tz;
